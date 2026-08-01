@@ -21,6 +21,8 @@ jobs:
       - name: Validate
         shell: bash
         run: |
+          set -e
+
           dart pub get
           dart format --set-exit-if-changed lib test
           dart analyze
