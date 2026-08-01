@@ -32,4 +32,4 @@ jobs:
           set -e
 
           dart pub global activate -sgit https://github.com/islandlifetech/action-pubspec-tag
-          dart pub global run dart_version_autotag:tag --token ${{ secrets.GITHUB_TOKEN }} --repository "islandlifetech/action-pubspec-tag"
+          dart pub global run dart_version_autotag:tag --token ${{ secrets.GITHUB_TOKEN }}
