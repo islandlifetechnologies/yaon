@@ -21,7 +21,7 @@ jobs:
         shell: bash
         run: |
           dart pub get
-          dart format --set-exit-if-changed
+          dart format --set-exit-if-changed lib test
           dart analyze
           dart test
 
