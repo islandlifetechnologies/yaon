@@ -10,7 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
 
       - name: Validate
-        uses: peiffer-innovations/actions-flutter-validate@v2
+        shell: bash
+        run: |
+          dart pub get
+          dart format --set-exit-if-changed lib test
+          dart analyze
+          dart test
