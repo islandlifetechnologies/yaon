@@ -5,22 +5,13 @@ import 'package:yaon/yaon.dart';
 void main() {
   final expected = {
     'foo': 'bar',
-    'list': [
-      1,
-      2,
-      3,
-      5,
-      8,
-    ],
-    'map': {
-      'one': 1,
-      'two': 2,
-    },
+    'list': [1, 2, 3, 5, 8],
+    'map': {'one': 1, 'two': 2},
     'numberedMap': {'1': 'one', '2': 'two'},
     'multiline': '''
 First Line
 Second Line
-Third Line'''
+Third Line''',
   };
 
   test('json', () {
@@ -74,22 +65,13 @@ multiline: |-
 
     expect(result, {
       'foo': 'bar',
-      'list': [
-        1,
-        2,
-        3,
-        5,
-        8,
-      ],
-      'map': {
-        'one': 1,
-        'two': 2,
-      },
+      'list': [1, 2, 3, 5, 8],
+      'map': {'one': 1, 'two': 2},
       'numberedMap': {'1': 'one', '2': 'two'},
       'multiline': '''
 First Line
 Second Line
-Third Line'''
+Third Line''',
     });
     expect(result is Map<dynamic, dynamic>, true);
   });

@@ -44,11 +44,7 @@ class YamlCodec {
     try {
       result = parse(input);
     } catch (e, stack) {
-      _logger.severe(
-        'Error processing: $input',
-        e,
-        stack,
-      );
+      _logger.severe('Error processing: $input', e, stack);
     }
 
     return result;
@@ -59,17 +55,13 @@ class YamlCodec {
 
     if (input is Map) {
       result = input.map(
-        (key, value) => MapEntry<String, dynamic>(
-          key.toString(),
-          _normalize(value),
-        ),
+        (key, value) =>
+            MapEntry<String, dynamic>(key.toString(), _normalize(value)),
       );
     } else if (input is YamlMap) {
       result = input.map(
-        (key, value) => MapEntry<String, dynamic>(
-          key.toString(),
-          _normalize(value),
-        ),
+        (key, value) =>
+            MapEntry<String, dynamic>(key.toString(), _normalize(value)),
       );
     } else if (input is List || input is YamlList) {
       final values = List<dynamic>.from(input);
