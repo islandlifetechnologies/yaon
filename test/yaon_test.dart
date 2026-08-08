@@ -70,7 +70,7 @@ multiline: |-
 
 ''';
 
-    var result = yaon.parse(input);
+    final result = yaon.parse(input);
 
     expect(result, {
       'foo': 'bar',

@@ -1,3 +1,7 @@
+## 2.0.2
+
+- Fixed bug in normalizing a list containing a map.
+
 ## 2.0.1
 
 - Changed ownership

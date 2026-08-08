@@ -72,7 +72,11 @@ class YamlCodec {
         ),
       );
     } else if (input is List || input is YamlList) {
-      result = List<dynamic>.from(input);
+      final values = List<dynamic>.from(input);
+      result = <dynamic>[];
+      for (final value in values) {
+        result.add(_normalize(value));
+      }
     }
 
     return result;
